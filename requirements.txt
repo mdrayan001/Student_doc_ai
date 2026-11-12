@@ -1,0 +1,53 @@
+# Student Doc AI - Requirements
+
+This project uses a local Qwen 3.5 4B model via Ollama.
+No API keys or internet connections are needed.
+
+## System Requirements
+
+- **Ollama** (https://ollama.com) - Local model server
+  - Install: https://ollama.com/download
+  - Start: `ollama serve`
+- **Qwen 3.5 4B** model
+  - Download: `ollama pull qwen3.5:4b`
+  - Size: ~3.3 GB
+
+## Python Dependencies
+
+Install the Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### requirements.txt
+
+```
+rich>=13.0.0
+requests>=2.28.0
+Pillow>=10.0.0
+```
+
+## How It Works
+
+1. **Ollama** runs locally on your machine (port 11434)
+2. **Qwen 3.5 4B** processes all images and text locally
+3. **Student Doc AI** is the terminal UI that presents the results
+
+## Run the Application
+
+```bash
+# Method 1: Run as module
+python -m student_doc_ai
+
+# Method 2: From project directory
+python -m student_doc_ai.cli
+```
+
+## Features
+
+- [x] Upload images via pasted path
+- [x] Browse images in terminal
+- [x] Extract text from images using Qwen 3.5 4B
+- [x] Ask questions about uploaded documents
+- [x] All processing is local (no data leaves your machine)
